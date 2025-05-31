@@ -255,11 +255,17 @@ function openModal(projectCard) {
             video.src = project.media;
             video.controls = true;
             video.playsInline = true;
+            video.muted = false; // Allow sound in modal
+            video.autoplay = false; // Don't autoplay in modal
+            video.style.backgroundColor = '#000';
+            video.addEventListener('loadedmetadata', () => {
+                video.style.opacity = '1';
+            });
             mediaContainer.appendChild(video);
             break;
         case 'youtube':
             const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${project.media}`;
+            iframe.src = `https://www.youtube.com/embed/${project.media}?rel=0&showinfo=0&modestbranding=1`;
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
             mediaContainer.appendChild(iframe);
