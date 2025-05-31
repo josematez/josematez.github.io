@@ -1204,16 +1204,51 @@ footer p {
 
 .close-modal {
     position: absolute;
-    right: 1.5rem;
+    right: 1rem;
     top: 1rem;
-    font-size: 2rem;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: #666;
-    transition: color 0.2s ease;
+    font-size: 24px;
+    line-height: 1;
+    transition: all 0.2s ease;
+    z-index: 1002;
 }
 
 .close-modal:hover {
+    background: rgba(0, 0, 0, 0.2);
     color: #333;
+    transform: scale(1.1);
+}
+
+/* Mobile-specific modal styles */
+@media (max-width: 768px) {
+    .project-modal {
+        padding: 0;
+    }
+
+    .modal-content {
+        min-height: 100vh;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 1.5rem;
+    }
+
+    .close-modal {
+        right: 1rem;
+        top: 1rem;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.2);
+        font-size: 28px;
+    }
 }
 
 .modal-body {
@@ -1367,30 +1402,6 @@ footer p {
 /* Make project cards clickable */
 .project-card {
     cursor: pointer;
-}
-
-/* Responsive Modal */
-@media (max-width: 768px) {
-    .modal-content {
-        padding: 1.5rem;
-    }
-
-    .modal-body {
-        grid-template-columns: 1fr;
-    }
-
-    .modal-title {
-        font-size: 1.5rem;
-    }
-
-    .modal-description {
-        font-size: 0.95rem;
-    }
-
-    .bibtex-citation {
-        font-size: 0.85rem;
-        padding: 0.75rem;
-    }
 }
 
 /* Responsive adjustments */

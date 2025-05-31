@@ -188,94 +188,145 @@ observer.observe(modal, { childList: true, subtree: true });
 document.querySelectorAll('.project-card').forEach(card => {
     const video = card.querySelector('.project-video');
     if (video) {
-        card.addEventListener('mouseenter', () => {
-            video.play().catch(() => {
-                console.log('Video autoplay failed');
+        // Load the video when the card is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.load();
+                }
             });
+        });
+        observer.observe(card);
+
+        card.addEventListener('mouseenter', () => {
+            // Set video attributes for better mobile compatibility
+            video.playsInline = true;
+            video.muted = true;
+            video.loop = true;
+            
+            // Try to play the video
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log('Video autoplay failed:', error);
+                });
+            }
         });
         
         card.addEventListener('mouseleave', () => {
-            video.pause();
-            video.currentTime = 0;
-        });
-
-        video.addEventListener('ended', () => {
-            video.currentTime = 0;
-            video.play().catch(() => {
-                console.log('Video replay failed');
-            });
+            if (!video.paused) {
+                video.pause();
+                video.currentTime = 0;
+            }
         });
     }
 });
 
 // Modal functionality
-const closeModal = document.querySelector('.close-modal');
+const modalContent = modal.querySelector('.modal-content');
+const closeModalBtn = modal.querySelector('.close-modal');
 
-// Open modal with project details
+function openModal(projectCard) {
+    const projectId = projectCard.dataset.project;
+    const project = projectData[projectId];
+    
+    // Update modal content
+    document.querySelector('.modal-title').textContent = project.title;
+    document.querySelector('.modal-description').textContent = project.description;
+    
+    // Update links
+    const githubLink = document.querySelector('.github-link');
+    if (project.github) {
+        githubLink.href = project.github;
+        githubLink.style.display = 'flex';
+    } else {
+        githubLink.style.display = 'none';
+    }
+    
+    document.querySelector('.paper-link').href = project.paper;
+    
+    // Update media container
+    const mediaContainer = document.querySelector('.modal-media-container');
+    mediaContainer.innerHTML = '';
+    
+    switch (project.type) {
+        case 'video':
+            const video = document.createElement('video');
+            video.src = project.media;
+            video.controls = true;
+            video.playsInline = true;
+            mediaContainer.appendChild(video);
+            break;
+        case 'youtube':
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${project.media}`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            mediaContainer.appendChild(iframe);
+            break;
+        case 'image':
+            const img = document.createElement('img');
+            img.src = project.media;
+            img.alt = project.title;
+            mediaContainer.appendChild(img);
+            break;
+    }
+    
+    // Update citation
+    document.querySelector('.bibtex-citation').textContent = project.bibtex;
+    
+    // Reset citation section state
+    const citationToggle = document.querySelector('.citation-toggle');
+    const citationSection = document.querySelector('.modal-citation');
+    citationToggle.classList.remove('active');
+    citationSection.classList.remove('active');
+    citationToggle.querySelector('span').textContent = 'Show Citation';
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Add click event listeners for closing
+    modal.addEventListener('click', handleModalClick);
+    closeModalBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', handleEscKey);
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Restore scrolling
+    
+    // Clear media container
+    const mediaContainer = document.querySelector('.modal-media-container');
+    mediaContainer.innerHTML = '';
+    
+    // Remove event listeners
+    modal.removeEventListener('click', handleModalClick);
+    closeModalBtn.removeEventListener('click', closeModal);
+    document.removeEventListener('keydown', handleEscKey);
+}
+
+function handleModalClick(event) {
+    // Close only if clicking outside the modal content
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+function handleEscKey(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+}
+
+// Project card click handler
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', (e) => {
         // Don't open modal if clicking on a link
         if (e.target.closest('.project-link')) {
             return;
         }
-
-        const projectId = card.dataset.project;
-        const project = projectData[projectId];
-        
-        // Update modal content
-        document.querySelector('.modal-title').textContent = project.title;
-        document.querySelector('.modal-description').textContent = project.description;
-        
-        // Update links
-        const githubLink = document.querySelector('.github-link');
-        if (project.github) {
-            githubLink.href = project.github;
-            githubLink.style.display = 'flex';
-        } else {
-            githubLink.style.display = 'none';
-        }
-        
-        document.querySelector('.paper-link').href = project.paper;
-        
-        // Update media container
-        const mediaContainer = document.querySelector('.modal-media-container');
-        mediaContainer.innerHTML = '';
-        
-        switch (project.type) {
-            case 'video':
-                const video = document.createElement('video');
-                video.src = project.media;
-                video.controls = true;
-                mediaContainer.appendChild(video);
-                break;
-            case 'youtube':
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${project.media}`;
-                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                mediaContainer.appendChild(iframe);
-                break;
-            case 'image':
-                const img = document.createElement('img');
-                img.src = project.media;
-                img.alt = project.title;
-                mediaContainer.appendChild(img);
-                break;
-        }
-
-        // Update citation
-        document.querySelector('.bibtex-citation').textContent = project.bibtex;
-        
-        // Reset citation section state
-        const citationToggle = document.querySelector('.citation-toggle');
-        const citationSection = document.querySelector('.modal-citation');
-        citationToggle.classList.remove('active');
-        citationSection.classList.remove('active');
-        citationToggle.querySelector('span').textContent = 'Show Citation';
-        
-        // Show modal
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        openModal(card);
     });
 });
 
@@ -346,24 +397,6 @@ document.querySelector('.copy-citation').addEventListener('click', () => {
         // Show modern toast notification
         showToast('BibTeX citation copied!');
     });
-});
-
-// Close modal
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-    const mediaContainer = document.querySelector('.modal-media-container');
-    mediaContainer.innerHTML = ''; // Clear media
-    document.body.style.overflow = 'auto'; // Restore scrolling
-});
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        const mediaContainer = document.querySelector('.modal-media-container');
-        mediaContainer.innerHTML = ''; // Clear media
-        document.body.style.overflow = 'auto';
-    }
 });
 
 // Handle media loading
