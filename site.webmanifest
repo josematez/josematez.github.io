@@ -1,0 +1,21 @@
+{
+    "name": "Jose Luis Matez - Portfolio",
+    "short_name": "JL Matez",
+    "description": "Portfolio of Jose Luis Matez - Computer Vision Engineer and PhD Candidate",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#147efb",
+    "icons": [
+        {
+            "src": "./assets/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+} 

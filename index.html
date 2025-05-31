@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Jose Luis Matez - AI & Computer Vision Engineer and PhD Candidate specializing in robotics, AI, and autonomous systems. Portfolio showcasing research and projects in computer vision and robotics.">
+    <meta name="keywords" content="Computer Vision, Robotics, AI, Deep Learning, Machine Learning, Research, PhD, Engineering">
+    <meta name="author" content="Jose Luis Matez">
+    <meta property="og:title" content="Jose Luis Matez - AI & Computer Vision Engineer">
+    <meta property="og:description" content="Portfolio of Jose Luis Matez - AI & Computer Vision Engineer and PhD Candidate specializing in robotics and AI">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <title>Jose Luis Matez - AI & Computer Vision Engineer</title>
+    <!-- Favicons -->
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
+    <nav class="floating-nav">
+        <ul>
+            <li><a href="#profile">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
     <nav id="desktop-nav">
-        <div class="logo">Jose Luis Matez</div>
+        <div class="logo">
+            <img src="./assets/logo-jlmb.png" alt="Jose Luis Matez Logo" class="logo-img">
+        </div>
         <div>
             <u1 class="nav-links">
                 <li><a href="#about">About Me</a></li>
@@ -21,7 +44,9 @@
         </div>
     </nav>
     <nav id="hamburger-nav">
-        <div class="logo">Jose Luis Matez</div>
+        <div class="logo">
+            <img src="./assets/logo-jlmb.png" alt="Jose Luis Matez Logo" class="logo-img">
+        </div>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span>
@@ -42,9 +67,9 @@
             <img src="./assets/yo-modified.png" alt="Jose Luis Matez Bandera profile picture"/>
         </div>
         <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
+            <p class="section__text__p1">Hi there! I'm</p>
             <h1 class="title">Jose Luis Matez Bandera</h1>
-            <p class="section__text__p2">Computer Vision Engineer</p>
+            <p class="section__text__p2">AI & Computer Vision Engineer</p>
             <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact</button>
@@ -62,19 +87,39 @@
         </div>
     </section>
     <section id="about">
-        <!-- <p class="section__text__p1">Who Am I</p> -->
         <h1 class="title">Who I am</h1>
         <div class="section-container">
           <div class="about-details-container">
             <div class="about-containers">
-              <div class="details-container">
-                <img
-                  src="./assets/education.png"
-                  alt="Education icon"
-                  class="icon"
-                />
+                    <div class="details-container education-container">
+                        <div class="education-header">
+                            <img src="./assets/education.png" alt="Education icon" class="icon" />
                 <h3>Education</h3>
-                <p>PhD in Mechatronics Engineering (in progress)<br /><br /> MSc in Mechatronics Engineering <br /><br />Degree in Robotics, Electronics and Mechatronics Engineering </p>
+                        </div>
+                        <div class="education-timeline">
+                            <div class="education-item">
+                                <span class="year">2020-Present</span>
+                                <div class="education-content">
+                                    <h4>PhD in Mechatronics Engineering</h4>
+                                    <p>University of Malaga</p>
+                                    <span class="status">In Progress</span>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <span class="year">2019-2020</span>
+                                <div class="education-content">
+                                    <h4>MSc in Mechatronics Engineering</h4>
+                                    <p>University of Malaga</p>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <span class="year">2015-2019</span>
+                                <div class="education-content">
+                                    <h4>BSc in Electronics, Robotics and Mechatronics Engineering</h4>
+                                    <p>University of Malaga</p>
+                                </div>
+                            </div>
+                        </div>
               </div>
             </div>
           </div>
@@ -85,30 +130,294 @@
             <p style="text-align: justify; margin-bottom: 15px;">
                 I have worked on various projects that bridge the gap between academic research and industry, focusing on perception-based and AI-driven solutions. My industry experience includes an internship at Ericsson, where I developed computer vision approaches to solve real-world challenges, resulting in a patent under review.
             </p>
-            <p style="text-align: justify; margin-bottom: 15px;">
+                <p style="text-align: justify;">
                 I'm enthusiastic about moving to the industry and applying the acquired knowledge and practical skills to solve real-world problems and make a meaningful impact.
             </p>
-            <p style="text-align: justify; margin-bottom: 15px;">
-                Computer Vision | Robotics | Autonomous Systems | Perception | AI | Deep Learning | Machine Learning | Data | Research | Automation | Innovation | Science | R&D | Cyber-Physical Systems
-            </p>
+            </div>
+            <div class="about-image-section">
+                <div class="about-pic-wrapper">
+                    <img src="./assets/me-chair.jpg" alt="Profile picture" class="about-pic" />
+                    <div class="about-pic-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skills-section">
+            <div class="skills-container">
+                <h3>Areas of Expertise</h3>
+                <div class="skills-tags">
+                    <span>Computer Vision</span>
+                    <span>Robotics</span>
+                    <span>Autonomous Systems</span>
+                    <span>AI</span>
+                    <span>Deep Learning</span>
+                    <span>Machine Learning</span>
+                    <span>Research</span>
+                    <span>Innovation</span>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <h3>Technical Stack</h3>
+                <div class="tech-icons-container">
+                    <div class="tech-category">
+                        <div class="tech-icons">
+                            <div class="tech-icon-container" data-tooltip="Python">
+                                <img src="./assets/tech/python.png" alt="Python" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="C++">
+                                <img src="./assets/tech/cplusplus.png" alt="C++" class="tech-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-separator"></div>
+                    <div class="tech-category">
+                        <div class="tech-icons">
+                            <div class="tech-icon-container" data-tooltip="PyTorch">
+                                <img src="./assets/tech/pytorch.png" alt="PyTorch" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="TensorFlow">
+                                <img src="./assets/tech/tensorflow.png" alt="TensorFlow" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="Detectron2">
+                                <img src="./assets/tech/detectron2.png" alt="Detectron2" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="TensorRT">
+                                <img src="./assets/tech/tensorrt.png" alt="TensorRT" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="scikit-learn">
+                                <img src="./assets/tech/scikitlearn.png" alt="scikit-learn" class="tech-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-separator"></div>
+                    <div class="tech-category">
+                        <div class="tech-icons">
+                            <div class="tech-icon-container" data-tooltip="OpenCV">
+                                <img src="./assets/tech/opencv.png" alt="OpenCV" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="ROS">
+                                <img src="./assets/tech/ros.png" alt="ROS" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="MongoDB">
+                                <img src="./assets/tech/mongodb.png" alt="MongoDB" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="Docker">
+                                <img src="./assets/tech/docker.png" alt="Docker" class="tech-icon">
+                            </div>
+                            <div class="tech-icon-container" data-tooltip="Git">
+                                <img src="./assets/tech/git.png" alt="Git" class="tech-icon">
+                            </div>
+                        </div>
+                    </div>
           </div>
-          <div class="section__pic-container">
-            <img
-              src="./assets/yo-modified.png"
-              alt="Profile picture"
-              class="about-pic"
-            />
           </div>
         </div>
-        <img
-          src="./assets/arrow.png"
-          alt="Arrow icon"
-          class="icon arrow"
-          onclick="location.href='./#experience'"
-        />
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
     </section>
     <section id="experience">
-        #Site Under Construction
+        <p class="section__text__p1">My Professional</p>
+        <h1 class="title">Experience</h1>
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date-circle">
+                            <span class="start-date">Nov 2024</span>
+                            <div class="separator"></div>
+                            <span class="end-date">Present</span>
+                        </div>
+                        <div class="header-group">
+                            <div class="title-line">
+                                <img src="./assets/tupl.png" alt="Tupl logo" class="company-logo">
+                                <div class="title-group">
+                                    <h3>AI & Computer Vision Engineer</h3>
+                                    <h4>Tupl</h4>
+                                </div>
+                            </div>
+                            <div class="location-group">
+                                <img src="./assets/location.png" alt="Location icon" class="location-icon">
+                                <span>Málaga, Spain</span>
+                            </div>
+                        </div>
+                        <p>Leading end-to-end development of AI-powered computer vision solutions in the verticals team, focusing on manufacturing and automotive sectors. Driving innovation through research and implementation of cutting-edge vision technologies, while managing client relationships and on-premise deployments. Architecting and delivering scalable solutions from conception to production.</p>
+                        <div class="tech-stack">
+                            <div class="tech-icons">
+                                <div class="tech-icon-container" data-tooltip="Python">
+                                    <img src="./assets/tech/python.png" alt="Python" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="PyTorch">
+                                    <img src="./assets/tech/pytorch.png" alt="PyTorch" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="OpenCV">
+                                    <img src="./assets/tech/opencv.png" alt="OpenCV" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Docker">
+                                    <img src="./assets/tech/docker.png" alt="Docker" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="MongoDB">
+                                    <img src="./assets/tech/mongodb.png" alt="MongoDB" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Git">
+                                    <img src="./assets/tech/git.png" alt="Git" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="TensorRT">
+                                    <img src="./assets/tech/tensorrt.png" alt="TensorRT" class="tech-icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date-circle">
+                            <span class="start-date">Sep 2019</span>
+                            <div class="separator"></div>
+                            <span class="end-date">Present</span>
+                        </div>
+                        <div class="header-group">
+                            <div class="title-line">
+                                <img src="./assets/mapir.png" alt="MAPIR logo" class="company-logo">
+                                <div class="title-group">
+                                    <h3>PhD Student in Computer Vision and Robotics</h3>
+                                    <h4>MAPIR (Machine Perception and Intelligent Robotics Group)</h4>
+                                </div>
+                            </div>
+                            <div class="location-group">
+                                <img src="./assets/location.png" alt="Location icon" class="location-icon">
+                                <span>Málaga, Spain</span>
+                            </div>
+                        </div>
+                        <p>Leading the development of advanced computer vision and robotics solutions, focusing on probabilistic models for scene understanding, visual localization, and semantic mapping. Successfully secured competitive funding (FPU Grant) and published multiple papers in top-tier venues. Additionally, contributed to knowledge transfer as a Teaching Assistant in Robotics, Control Systems, and Biomedical Engineering.</p>
+                        <div class="tech-stack">
+                            <div class="tech-icons">
+                                <div class="tech-icon-container" data-tooltip="Python">
+                                    <img src="./assets/tech/python.png" alt="Python" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="C++">
+                                    <img src="./assets/tech/cplusplus.png" alt="C++" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="PyTorch">
+                                    <img src="./assets/tech/pytorch.png" alt="PyTorch" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="TensorFlow">
+                                    <img src="./assets/tech/tensorflow.png" alt="TensorFlow" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="OpenCV">
+                                    <img src="./assets/tech/opencv.png" alt="OpenCV" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="ROS">
+                                    <img src="./assets/tech/ros.png" alt="ROS" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Detectron2">
+                                    <img src="./assets/tech/detectron2.png" alt="Detectron2" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="scikit-learn">
+                                    <img src="./assets/tech/scikitlearn.png" alt="scikit-learn" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Git">
+                                    <img src="./assets/tech/git.png" alt="Git" class="tech-icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date-circle">
+                            <span class="start-date">Mar 2023</span>
+                            <div class="separator"></div>
+                            <span class="end-date">Jun 2023</span>
+                        </div>
+                        <div class="header-group">
+                            <div class="title-line">
+                                <img src="./assets/ericsson.png" alt="Ericsson logo" class="company-logo">
+                                <div class="title-group">
+                                    <h3>R&D Computer Vision Engineer Intern</h3>
+                                    <h4>Ericsson Research</h4>
+                                </div>
+                            </div>
+                            <div class="location-group">
+                                <img src="./assets/location.png" alt="Location icon" class="location-icon">
+                                <span>Stockholm, Sweden</span>
+                            </div>
+                        </div>
+                        <p>Led research on innovative visual localization techniques for heterogeneous devices at Ericsson's prestigious research division. Developed novel computer vision solutions that resulted in a patent application, demonstrating significant impact in device positioning technology.</p>
+                        <div class="tech-stack">
+                            <div class="tech-icons">
+                                <div class="tech-icon-container" data-tooltip="Python">
+                                    <img src="./assets/tech/python.png" alt="Python" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="C++">
+                                    <img src="./assets/tech/cplusplus.png" alt="C++" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="OpenCV">
+                                    <img src="./assets/tech/opencv.png" alt="OpenCV" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="ROS2">
+                                    <img src="./assets/tech/ros.png" alt="ROS2" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Detectron2">
+                                    <img src="./assets/tech/detectron2.png" alt="Detectron2" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Cython">
+                                    <img src="./assets/tech/cython.png" alt="Cython" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="scikit-learn">
+                                    <img src="./assets/tech/scikitlearn.png" alt="scikit-learn" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Git">
+                                    <img src="./assets/tech/git.png" alt="Git" class="tech-icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="date-circle">
+                            <span class="start-date">Mar 2019</span>
+                            <div class="separator"></div>
+                            <span class="end-date">Jun 2019</span>
+                        </div>
+                        <div class="header-group">
+                            <div class="title-line">
+                                <img src="./assets/mlabs.png" alt="MLabs logo" class="company-logo">
+                                <div class="title-group">
+                                    <h3>Computer Vision Engineer Intern</h3>
+                                    <h4>MLabs Optronics (MESUREX S.L.U.)</h4>
+                                </div>
+                            </div>
+                            <div class="location-group">
+                                <img src="./assets/location.png" alt="Location icon" class="location-icon">
+                                <span>Technology Park of Andalusia, Spain</span>
+                            </div>
+                        </div>
+                        <p>Researched and developed computer vision solutions for industrial applications, integrating RGB and thermal imaging technologies. Created applications for real-time image processing and analysis, focusing on robust and efficient implementations.</p>
+                        <div class="tech-stack">
+                            <div class="tech-icons">
+                                <div class="tech-icon-container" data-tooltip="Python">
+                                    <img src="./assets/tech/python.png" alt="Python" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="C++">
+                                    <img src="./assets/tech/cplusplus.png" alt="C++" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="OpenCV">
+                                    <img src="./assets/tech/opencv.png" alt="OpenCV" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="NumPy">
+                                    <img src="./assets/tech/numpy.png" alt="NumPy" class="tech-icon">
+                                </div>
+                                <div class="tech-icon-container" data-tooltip="Git">
+                                    <img src="./assets/tech/git.png" alt="Git" class="tech-icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <img
           src="./assets/arrow.png"
           alt="Arrow icon"
@@ -116,87 +425,188 @@
           onclick="location.href='./#projects'"
         />
     </section>
-    <section id="projects">
         <section id="projects">
             <p class="section__text__p1">Browse My Recent</p>
             <h1 class="title">Projects</h1>
-            Site Under Construction
-            <div class="experience-details-container">
-              <div class="about-containers">
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/project-1.png"
-                      alt="Project 1"
-                      class="project-img"
-                    />
+        <div class="projects-grid">
+            <!-- Project 1 - BVPC -->
+            <div class="project-card" data-project="project1">
+                <div class="project-content">
+                    <div class="project-image-container">
+                        <img src="./assets/projects/place_categorization.jpg" alt="BVPC" class="project-image">
+                        <div class="project-gradient"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Best View to Place Categorization (BVPC)</h3>
+                        <p>Efficient semantic place categorization by a robot through active line-of-sight selection.</p>
+                        <div class="project-links">
+                            <a href="https://mapir.uma.es/papersrepo/2021/2021_matez_KBS_semantic_place_categorization.pdf" target="_blank" class="project-link">
+                                <img src="./assets/paper.png" alt="Paper" class="link-icon">
+                                <span>Paper</span>
+                            </a>
+                            <a href="#" class="project-link cite-link" data-project="project1">
+                                <img src="./assets/cite.png" alt="Cite" class="link-icon">
+                                <span>BibTeX</span>
+                            </a>
+                        </div>
+                        <div class="project-tags">
+                            <span>Computer Vision</span>
+                            <span>Robotics</span>
+                            <span>Place Categorization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 - LTC-Mapping -->
+            <div class="project-card" data-project="project2">
+                <div class="project-content">
+                    <div class="project-image-container">
+                        <img src="./assets/projects/ltc_mapping.jpg" alt="LTC-Mapping" class="project-image">
+                        <div class="project-gradient"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LTC-Mapping</h3>
+                        <p>Long-term consistency of object-oriented semantic maps in robotics.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MAPIRlab/LTC-Mapping" target="_blank" class="project-link">
+                                <img src="./assets/github.png" alt="GitHub" class="link-icon">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://mapir.uma.es/papersrepo/2022/2022_matez_LTCmapping.pdf" target="_blank" class="project-link">
+                                <img src="./assets/paper.png" alt="Paper" class="link-icon">
+                                <span>Paper</span>
+                            </a>
+                            <a href="#" class="project-link cite-link" data-project="project2">
+                                <img src="./assets/cite.png" alt="Cite" class="link-icon">
+                                <span>BibTeX</span>
+                            </a>
+                        </div>
+                        <div class="project-tags">
+                            <span>Semantic Mapping</span>
+                            <span>Object Detection</span>
+                            <span>Computer Vision</span>
+                            <span>Robotics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - Sigma-FP -->
+            <div class="project-card" data-project="project3">
+                <div class="project-content">
+                    <div class="project-image-container">
+                        <img src="https://img.youtube.com/vi/7aaD1H4IXb8/maxresdefault.jpg" alt="Sigma-FP Preview" class="project-preview">
+                        <div class="preview-youtube" data-youtube-id="7aaD1H4IXb8">
+                            <!-- YouTube iframe will be inserted here by JavaScript -->
+                        </div>
+                        <div class="project-gradient"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sigma-FP</h3>
+                        <p>Robot Mapping of 3D Floor Plans with an RGB-D Camera under Uncertainty.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MAPIRlab/sigma-fp" target="_blank" class="project-link">
+                                <img src="./assets/github.png" alt="GitHub" class="link-icon">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://riuma.uma.es/xmlui/bitstream/handle/10630/26928/2022_matez_RAL_sigmaFP.pdf?sequence=1" target="_blank" class="project-link">
+                                <img src="./assets/paper.png" alt="Paper" class="link-icon">
+                                <span>Paper</span>
+                            </a>
+                            <a href="#" class="project-link cite-link" data-project="project3">
+                                <img src="./assets/cite.png" alt="Cite" class="link-icon">
+                                <span>BibTeX</span>
+                            </a>
+                        </div>
+                        <div class="project-tags">
+                            <span>3D Mapping</span>
+                            <span>Uncertainty Quantification</span>
+                            <span>Computer Vision</span>
+                            <span>Robotics</span>
                   </div>
-                  <h2 class="experience-sub-title project-title">Project One</h2>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Live Demo
-                    </button>
                   </div>
                 </div>
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/project-2.png"
-                      alt="Project 2"
-                      class="project-img"
-                    />
+            </div>
+
+            <!-- Project 4 - Voxeland -->
+            <div class="project-card" data-project="project4">
+                <div class="project-content">
+                    <div class="project-image-container">
+                        <img src="./assets/projects/voxeland_thumbnail.jpg" alt="Voxeland Preview" class="project-preview">
+                        <video class="project-video" muted loop playsinline>
+                            <source src="./assets/videos/voxeland_map.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-gradient"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Voxeland</h3>
+                        <p>Probabilistic Instance-Aware Semantic Mapping with Evidence-based Uncertainty Quantification.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MAPIRlab/Voxeland" target="_blank" class="project-link">
+                                <img src="./assets/github.png" alt="GitHub" class="link-icon">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://arxiv.org/pdf/2411.08727" target="_blank" class="project-link">
+                                <img src="./assets/paper.png" alt="Paper" class="link-icon">
+                                <span>Paper</span>
+                            </a>
+                            <a href="#" class="project-link cite-link" data-project="project4">
+                                <img src="./assets/cite.png" alt="Cite" class="link-icon">
+                                <span>BibTeX</span>
+                            </a>
+                        </div>
+                        <div class="project-tags">
+                            <span>Object Detection</span>
+                            <span>Uncertainty Quantification</span>
+                            <span>Semantic Mapping</span>
+                            <span>Computer Vision</span>
+                            <span>Robotics</span>
                   </div>
-                  <h2 class="experience-sub-title project-title">Project Two</h2>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Github
-                    </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Live Demo
-                    </button>
                   </div>
                 </div>
-                <div class="details-container color-container">
-                  <div class="article-container">
-                    <img
-                      src="./assets/project-3.png"
-                      alt="Project 3"
-                      class="project-img"
-                    />
+            </div>
+        </div>
+
+        <!-- Project Modal -->
+        <div class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-media-container">
+                        <!-- Media (video/image) will be inserted here -->
+                    </div>
+                    <div class="modal-info">
+                        <h2 class="modal-title"></h2>
+                        <p class="modal-description"></p>
+                        <div class="modal-links">
+                            <a href="#" class="modal-link paper-link" target="_blank">
+                                <img src="./assets/paper.png" alt="Paper" class="link-icon">
+                                Research Paper
+                            </a>
+                            <a href="#" class="modal-link github-link" target="_blank" style="display: none;">
+                                <img src="./assets/github.png" alt="GitHub" class="link-icon">
+                                GitHub Repository
+                            </a>
                   </div>
-                  <h2 class="experience-sub-title project-title">Project Three</h2>
-                  <div class="btn-container">
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Github
+                        <div class="modal-citation-container">
+                            <button class="citation-toggle">
+                                <span>Show Citation</span>
+                                <img src="./assets/arrow.png" alt="Toggle" class="toggle-icon">
                     </button>
-                    <button
-                      class="btn btn-color-2 project-btn"
-                      onclick="location.href='https://github.com/'"
-                    >
-                      Live Demo
+                            <div class="modal-citation">
+                                <pre class="bibtex-citation"></pre>
+                                <button class="copy-citation" title="Copy BibTeX">
+                                    <img src="./assets/copy.png" alt="Copy" class="copy-icon">
+                                    Copy BibTeX
                     </button>
                   </div>
                 </div>
               </div>
             </div>
+            </div>
+        </div>
+
             <img
           src="./assets/arrow.png"
           alt="Arrow icon"
@@ -209,20 +619,12 @@
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
           <div class="contact-info-container">
-            <img
-              src="./assets/email.png"
-              alt="Email icon"
-              class="icon contact-icon email-icon"
-            />
-            <p><a href="mailto:joseluismtzbnd@gmail.com">joseluismtzbnd@gmail.com</a></p>
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon"/>
+                <a href="mailto:joseluismtzbnd@gmail.com">joseluismtzbnd@gmail.com</a>
           </div>
           <div class="contact-info-container">
-            <img
-              src="./assets/linkedin.png"
-              alt="LinkedIn icon"
-              class="icon contact-icon"
-            />
-            <p><a href="https://www.linkedin.com/in/joseluismatez">LinkedIn</a></p>
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon"/>
+                <a href="https://linkedin.com/in/joseluismatez">LinkedIn</a>
           </div>
         </div>
       </section>
@@ -237,12 +639,12 @@
             </ul>
           </div>
         </nav>
-        <p>Copyright &#169; 2024 Jose Luis Matez. All Rights Reserved. Webpage created based on this <a href="https://www.youtube.com/watch?v=ldwlOzRvYOU">YouTube video</a></p>
+        <p>Copyright &#169; 2025 Jose Luis Matez. All Rights Reserved.</p>
       </footer>
-      <script src="script.js"></script>
-    </body>
-  </html>
+      
+      <!-- Toast Container -->
+      <div class="toast-container"></div>
 
-    <script src="scripts.js"></script>
+      <script src="script.js"></script>
 </body>
 </html>
